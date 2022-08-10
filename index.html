@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterator</title>
+</head>
+
+<body>
+
+
+
+    <body class="p-4">
+        <h2 class="text-center">Iterator</h2>
+
+        <p>
+            <b>What is an iterator?</b>
+            <br />
+            It is an object that allows us to traverse over a list or collection.
+            Iterators' purpose is to define the sequences and implement the iterator
+            protocol that returns an object by using a next() method that contains the
+            <b>value</b> and <b>done</b>.
+        <ul>
+            <li>done:
+                <p>
+                    It is a boolean value indicating
+                    whether any more elements in the sequence could be iterated upon.
+                </p>
+            </li>
+            <li>value:</li>
+            <p>It is the current element of the sequence.</p>
+        </ul>
+        So, we can define iterators as
+        an <b>“object that knows how to access items from a collection one at a time,
+            while keeping track of its current position within that sequence.”</b> <br> Suppose
+        we have an array, and it contains five numbers, i.e., [1,2,3,4,5]. As we
+        know, the Iterator object has a next() method that returns the next item
+        in the sequence. So, when we write next(), well get the element of the
+        array. The next() method returns an object with two properties: value and
+        done. If there are elements present in the sequence that could be
+        iterated, then the value contains the next element and done is set to
+        false: <br> <b>{ value: 'next value', done: false }</b> <br> If we call the next() method
+        after the last value has been returned, then the next() returns the result
+        object as follows: <br> <b> {done: true: value: undefined} </b> <br> Here the value of the
+        done property, which is true, indicates that there is no more value to
+        return, and the value of the property is set to undefined. <br> Here is a
+        simple example of an iterator:
+        </p>
+        <pre class="language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">myIterable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> counter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          <span class="token function-variable function">next</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>counter <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              counter<span class="token operator">++</span><span class="token punctuation">;</span>
+              <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">done</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> counter <span class="token punctuation">}</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+              <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">done</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token keyword">undefined</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span></code></pre>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+        <script src="js-30.js"></script>
+        <a href="js-31.html">next</a>
+    </body>
+
+</html>
